@@ -1,7 +1,7 @@
 from gui.Command import Command
 from logic.Chordhandler import Chordhandler
 import time
-import threading
+import sys
 import os
 
 class ChordChangeCommand(Command):
@@ -10,40 +10,35 @@ class ChordChangeCommand(Command):
         
     def execute(self):
         os.system('cls')
-        time_limit = input("Enter time limit in seconds (default 60): ")
-        if not time_limit:
-            time_limit = 60
-        else:
-            time_limit = int(time_limit)
-
         chord1, chord2 = self.handler.get2RandomChords()
 
-        print(f"Change from {chord1.name} ({chord1.frets}) to {chord2.name} ({chord2.frets})")
+        header = "--------------------------------------------------\n"
+        header += "Chord Change Exercise\n"
+        header += "--------------------------------------------------"
 
-        input("Press any key to start...")
-        print("Starting in...")
-        for i in range(3, 0, -1):
-            print(i)
+        print(header)
+        time_limit = int(input("Enter time limit in seconds (default 60): "))
+        sys.stdout.write("\033[F")
+        input(f"Change from {chord1} to {chord2}\nPress any key to start...")
+        sys.stdout.flush()
+        sys.stdout.write("\033[F")
+        
+        start_countdown = range(3, 0, -1)
+        for i in start_countdown:
+            sys.stdout.write(f"Starting in...\n{i}\n")
+            sys.stdout.flush()
             time.sleep(1)
+            if i != 1:
+                sys.stdout.write("\033[F" * 2)  # Move up 2 lines in the console
+
         print("GO!")
-        
-        timer_thread = threading.Thread(target=display_time_left, args=[time_limit])
-        timer_thread.start()
 
-        start_time = time.time()
-        while time.time() - start_time < time_limit:
-            pass
-            
-        timer_thread.join()
+        for i in range(time_limit, -1, -1):
+           sys.stdout.write(f"Time left: {i}\n")
+           sys.stdout.flush()
+           time.sleep(1)
+           if i != 0:
+               sys.stdout.write("\033[F")  # Move up 4 lines in the console
 
-
+        print("Time's up!")
         num_changes = int(input("Enter the number of chord changes: "))
-
-        # save progress to storage
-        # self.handler.save_progress(num_changes)
-        
-def display_time_left(time_left):
-    while time_left > 0:
-        print("Time left:", time_left)
-        time_left -= 1
-        time.sleep(1)
