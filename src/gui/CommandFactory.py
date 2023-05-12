@@ -1,5 +1,6 @@
 from gui.commands import ChordChangeCommand
 from gui.commands import ExitCommand
+from gui.commands import DisplayProgressCommand
 
 class CommandFactory:
     
@@ -8,5 +9,7 @@ class CommandFactory:
             return ChordChangeCommand.ChordChangeCommand()
         elif command == "exit":
             return ExitCommand.ExitCommand()
+        elif command == "displayProgress":
+            return DisplayProgressCommand.DisplayProgressCommand()
         else:
             raise ValueError(f"Command {command} is not valid.")

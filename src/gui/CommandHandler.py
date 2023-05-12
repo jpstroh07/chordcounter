@@ -5,6 +5,7 @@ def start():
     menu = Menu.Menu()
 
     menu.addCommand("chordchange")
+    menu.addCommand("displayProgress")
     menu.addCommand("exit")
 
     while True:

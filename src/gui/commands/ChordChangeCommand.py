@@ -1,4 +1,4 @@
-from logic.Chordhandler import Chordhandler
+from logic.Handler import Handler
 import time
 import sys
 import os
@@ -9,7 +9,7 @@ header += "--------------------------------------------------"
 
 class ChordChangeCommand:
     def __init__(self):
-        self.handler = Chordhandler()
+        self.handler = Handler()
         
     def __str__(self):
         return "Chord Change Exercise"
@@ -54,4 +54,6 @@ class ChordChangeCommand:
         os.system('cls')
         print(header)
         print("Time's up!")
+        
         num_changes = int(input("Enter the number of chord changes: "))
+        self.handler.insertProgress(chord1.name, chord2.name, num_changes)

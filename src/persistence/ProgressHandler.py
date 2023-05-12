@@ -23,10 +23,10 @@ class ProgressHandler:
         conn.commit()
         conn.close()
         
-    def getProgress(self):
+    def getProgress(self, chord1, chord2):
         conn = sqlite3.connect(progress_path)
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM chord_progressions")
+        cursor.execute("SELECT * FROM chord_progressions WHERE chord_progression = ?", (f"{chord1} -> {chord2}",))
         result = cursor.fetchall()
         conn.close()
         return result
