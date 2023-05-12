@@ -1,5 +1,5 @@
-from gui import ChordChangeCommand
+from gui import CommandHandler
 
-c = ChordChangeCommand.ChordChangeCommand()
+handler = CommandHandler
 
-c.execute()
+handler.start()

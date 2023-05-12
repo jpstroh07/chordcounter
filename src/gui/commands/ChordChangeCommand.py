@@ -1,4 +1,3 @@
-from gui.Command import Command
 from logic.Chordhandler import Chordhandler
 import time
 import sys
@@ -8,9 +7,12 @@ header = "--------------------------------------------------\n"
 header += "Chord Change Exercise\n"
 header += "--------------------------------------------------"
 
-class ChordChangeCommand(Command):
+class ChordChangeCommand:
     def __init__(self):
         self.handler = Chordhandler()
+        
+    def __str__(self):
+        return "Chord Change Exercise"
         
     def execute(self):
         os.system('cls')
