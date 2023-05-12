@@ -1,6 +1,6 @@
 from gui import ChordChangeCommand
 
-class CommandFactory():
+class CommandFactory:
     
     def getCommand(self, command):
         if command == "chordchange":

@@ -1,6 +1,7 @@
-import gui.CommandFactory as CommandFactory
+from persistence import ProgressHandler
 
-c = CommandFactory.CommandFactory()
-f = c.getCommand("chordchange")
+h = ProgressHandler.ProgressHandler()
 
-f.execute()
+h.insertProgress("C", "D", 1)
+
+print(h.getProgress())
