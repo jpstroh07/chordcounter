@@ -1,7 +1,5 @@
-from persistence import ProgressHandler
+from gui import ChordChangeCommand
 
-h = ProgressHandler.ProgressHandler()
+c = ChordChangeCommand.ChordChangeCommand()
 
-h.insertProgress("C", "D", 1)
-
-print(h.getProgress())
+c.execute()

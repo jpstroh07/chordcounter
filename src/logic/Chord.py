@@ -31,7 +31,7 @@ class Chord:
             fretboard_str += ' '.join(row) + '\n'
 
         # Return the string representation
-        return f'Chord: {self.name}\n' + fretboard_str
+        return f'     {self.name}\n' + fretboard_str
     
     @classmethod
     def from_xml(cls, xml_element):

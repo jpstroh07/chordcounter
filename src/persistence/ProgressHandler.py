@@ -3,7 +3,7 @@ import sqlite3
 progress_path = "src/persistence/db/progress.db"
 
 class ProgressHandler:
-    def __init__(self) -> None:
+    def __init__(self):
         conn = sqlite3.connect(progress_path)
         cursor = conn.cursor()
         cursor.execute("""

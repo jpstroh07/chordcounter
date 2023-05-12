@@ -14,15 +14,25 @@ class ChordChangeCommand(Command):
         
     def execute(self):
         os.system('cls')
-        chord1, chord2 = self.handler.get2RandomChords()
-
         print(header)
         
+        chord1, chord2 = self.handler.get2RandomChords()
+
         time_limit = int(input("Enter time limit in seconds (default 60): "))
         
-        sys.stdout.write("\033[F")
+        os.system('cls')
+        print(header)
+        
+        print(f"Chord 1:\n{chord1}")
+        
+        print(f"Chord 2:\n{chord2}")
+        
         input(f"Press any key to start...")
+        
         sys.stdout.write("\033[F")
+        sys.stdout.write(" " * len("Press any key to start..."))
+        sys.stdout.write("\033[F")
+        print("")
         
         start_countdown = range(3, 0, -1)
         for i in start_countdown:
@@ -39,5 +49,7 @@ class ChordChangeCommand(Command):
            if i != 0:
                sys.stdout.write("\033[F")  # Move up 4 lines in the console
 
+        os.system('cls')
+        print(header)
         print("Time's up!")
         num_changes = int(input("Enter the number of chord changes: "))
