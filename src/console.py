@@ -1,5 +1,9 @@
-from gui import ChordChangeCommand
+from logic.Chordhandler import Chordhandler
 
-c = ChordChangeCommand.ChordChangeCommand()
+c = Chordhandler()
 
-c.execute()
+while True:
+    chord1, chord2 = c.get2RandomChords()
+    print(chord1)
+    print(chord2)
+    input()

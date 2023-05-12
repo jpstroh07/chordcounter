@@ -32,11 +32,11 @@
     <chord name="D" frets="x,x,0,2,3,2">
         <finger finger="1" fret="2" string="G"/>
         <finger finger="2" fret="3" string="B"/>
-        <finger finger="3" fret="2" string="E"/>
+        <finger finger="3" fret="2" string="e"/>
     </chord>
 
     <chord name="Dm" frets="x,x,0,2,3,1">
-        <finger finger="1" fret="1" string="E"/>
+        <finger finger="1" fret="1" string="e"/>
         <finger finger="2" fret="2" string="G"/>
         <finger finger="3" fret="3" string="B"/>
     </chord>
