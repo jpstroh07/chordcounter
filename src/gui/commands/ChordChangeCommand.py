@@ -20,7 +20,7 @@ class ChordChangeCommand:
         
         chord1, chord2 = self.handler.get2RandomChords()
 
-        time_limit = int(input("Enter time limit in seconds (default 60): "))
+        time_limit = 12
         
         os.system('cls')
         print(header)
@@ -29,7 +29,7 @@ class ChordChangeCommand:
         
         print(f"Chord 2:\n{chord2}")
         
-        input(f"Press any key to start...")
+        input(f"Press enter to start...")
         
         sys.stdout.write("\033[F")
         sys.stdout.write(" " * len("Press any key to start..."))
@@ -38,18 +38,28 @@ class ChordChangeCommand:
         
         start_countdown = range(3, 0, -1)
         for i in start_countdown:
-            sys.stdout.write(f"Starting in...\n{i}\n")
+            sys.stdout.write(f"Starting in... {i}\n")
             time.sleep(1)
             if i != 1:
-                sys.stdout.write("\033[F" * 2)  # Move up 2 lines in the console
+                sys.stdout.write("\033[F")
 
-        print("GO!")
+        sys.stdout.write("\033[F")
+        sys.stdout.write(" " * len("starting in 3..."))
+        sys.stdout.write("\033[F")
+        print("")
+        sys.stdout.write("Go!\n")
 
+        time.sleep(1)
+        sys.stdout.write("\033[F")
+        
         for i in range(time_limit, -1, -1):
-           sys.stdout.write(f"Time left: {i}\n")
-           time.sleep(1)
-           if i != 0:
-               sys.stdout.write("\033[F")  # Move up 4 lines in the console
+            if i >= 10:
+                sys.stdout.write(f"Time left: {i}\n")
+            else:
+                sys.stdout.write(f"Time left:  {i} \n")
+            time.sleep(1)
+            if i != 0:
+                sys.stdout.write("\033[F")
 
         os.system('cls')
         print(header)
