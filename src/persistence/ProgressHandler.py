@@ -50,6 +50,10 @@ class ProgressHandler:
         if len(result) == 0:
             raise ProgressNotFoundError(f"No progress found for {chord1} -> {chord2}")
         
-        progress = Progress(result[0][1], result[0][2], result[0][3])
+        progress = []
+        
+        for row in result:
+            progress.append(Progress(row[1], row[2], row[3]))
+        
         conn.close()
         return progress

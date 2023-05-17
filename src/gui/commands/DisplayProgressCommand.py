@@ -20,11 +20,13 @@ class DisplayProgressCommand:
         
         try:
             result = self.handler.getProgress(chord1, chord2)
+
+            for progress in result:
+                print(progress)
+        
+            input("Press enter key to continue...")
+            
         except ProgressNotFoundError as e:
             print(e)
             input("Press enter key to continue...")
             return
-
-        print(result)
-        
-        input("Press enter key to continue...")
