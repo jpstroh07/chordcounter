@@ -20,7 +20,7 @@ class ChordChangeCommand:
         
         chord1, chord2 = self.handler.get2RandomChords()
 
-        time_limit = 60
+        time_limit = 5
         
         os.system('cls')
         print(header)

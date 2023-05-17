@@ -1,4 +1,5 @@
 from logic.Handler import Handler
+from errors.ProgressNotFoundError import ProgressNotFoundError
 import os
 
 class DisplayProgressCommand:
@@ -17,11 +18,13 @@ class DisplayProgressCommand:
         chord1 = input("Enter first chord: ")
         chord2 = input("Enter second chord: ")
         
-        result = self.handler.getProgress(chord1, chord2)
+        try:
+            result = self.handler.getProgress(chord1, chord2)
+        except ProgressNotFoundError as e:
+            print(e)
+            input("Press enter key to continue...")
+            return
+
+        print(result)
         
-        if len(result) == 0:
-            print(f"No progress found for {chord1} -> {chord2}")
-        else:
-            print(f"Chord Progression: {result}")
-        
-        input("Press any key to continue...")
+        input("Press enter key to continue...")

@@ -23,3 +23,6 @@ class Handler:
         
     def getProgress(self, chord1, chord2):
         return self.progresshandler.getProgress(chord1, chord2)
+    
+    def getAllProgress(self):    
+        return self.progresshandler.getAllProgress()
