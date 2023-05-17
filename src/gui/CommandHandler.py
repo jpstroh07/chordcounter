@@ -10,11 +10,15 @@ def start():
     menu.addCommand("exit")
 
     while True:
-        os.system('cls')
+        try:
+            os.system('cls')
         
-        print("----------------------------------------")
-        print("Guitar Practice - Main Menu")
-        print("----------------------------------------")
+            print("----------------------------------------")
+            print("Guitar Practice - Main Menu")
+            print("----------------------------------------")
         
-        menu.displayCommands()
-        menu.executeCommand(int(input("Enter command: ")))
+            menu.displayCommands()
+            menu.executeCommand(int(input("Enter command: ")))
+        except Exception:
+            print("Enter a valid command!")
+            input("Press enter to continue...")

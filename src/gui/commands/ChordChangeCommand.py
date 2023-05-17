@@ -60,10 +60,16 @@ class ChordChangeCommand:
             time.sleep(1)
             if i != 0:
                 sys.stdout.write("\033[F")
-
-        os.system('cls')
-        print(header)
-        print("Time's up!")
         
-        num_changes = int(input("Enter the number of chord changes: "))
-        self.handler.insertProgress(chord1.name, chord2.name, num_changes)
+        while True:
+            try:
+                os.system('cls')
+                print(header)
+                print("Time's up!")
+                
+                num_changes = int(input("Enter the number of chord changes: "))
+                self.handler.insertProgress(chord1.name, chord2.name, num_changes)
+                break
+            except ValueError:
+                print("Enter a valid number!")
+                input("Press enter to continue...")
