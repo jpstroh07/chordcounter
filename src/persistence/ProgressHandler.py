@@ -44,7 +44,7 @@ class ProgressHandler:
     def getProgress(self, chord1, chord2):
         conn = sqlite3.connect(progress_path)
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM chord_progressions WHERE chord_progression = ?", (f"{chord1} -> {chord2}",))
+        cursor.execute("SELECT * FROM chord_progressions WHERE chord_progression = ? OR chord_progression = ?", (f"{chord1} -> {chord2}", f"{chord2} -> {chord1}"))
         result = cursor.fetchall()
 
         if len(result) == 0:
