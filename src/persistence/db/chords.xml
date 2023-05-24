@@ -40,4 +40,10 @@
         <finger finger="2" fret="2" string="G"/>
         <finger finger="3" fret="3" string="B"/>
     </chord>
+
+    <chord name="G" frets="3,2,0,0,0,2">
+        <finger finger="1" fret="2" string="A"/>
+        <finger finger="2" fret="3" string="E"/>
+        <finger finger="3" fret="3" string="e"/>
+    </chord>
 </chords>
