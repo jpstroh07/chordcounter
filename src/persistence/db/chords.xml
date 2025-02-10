@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chords>
-    <chord name="C" frets="X,3,2,0,1,0">
-        <finger finger="1" fret="1" string="B"/>
-        <finger finger="2" fret="2" string="D"/>
-        <finger finger="3" fret="3" string="A"/>
-    </chord>
-
     <chord name="A" frets="X,0,2,2,2,0">
         <finger finger="1" fret="2" string="D"/>
         <finger finger="2" fret="2" string="G"/>
@@ -16,6 +10,19 @@
         <finger finger="1" fret="1" string="B"/>
         <finger finger="2" fret="2" string="D"/>
         <finger finger="3" fret="2" string="G"/>
+    </chord>
+
+    <chord name="C" frets="X,3,2,0,1,0">
+        <finger finger="1" fret="1" string="B"/>
+        <finger finger="2" fret="2" string="D"/>
+        <finger finger="3" fret="3" string="A"/>
+    </chord>
+
+    <chord name="Cadd9" frets="X,3,2,0,3,3">
+        <finger finger="1" fret="2" string="D"/>
+        <finger finger="2" fret="3" string="A"/>
+        <finger finger="3" fret="3" string="B"/>
+        <finger finger="4" fret="3" string="e"/>
     </chord>
 
     <chord name="E" frets="0,2,2,1,0,0">
@@ -31,8 +38,8 @@
 
     <chord name="D" frets="X,X,0,2,3,2">
         <finger finger="1" fret="2" string="G"/>
-        <finger finger="2" fret="3" string="B"/>
-        <finger finger="3" fret="2" string="e"/>
+        <finger finger="2" fret="2" string="e"/>
+        <finger finger="3" fret="3" string="B"/>
     </chord>
 
     <chord name="Dm" frets="X,X,0,2,3,1">
@@ -41,9 +48,19 @@
         <finger finger="3" fret="3" string="B"/>
     </chord>
 
-    <chord name="G" frets="3,2,0,0,0,2">
+    <chord name="F" frets="1,3,3,2,1,1">
+        <finger finger="1" fret="1" string="E"/>
+        <finger finger="3" fret="3" string="A"/>
+        <finger finger="4" fret="3" string="D"/>
+        <finger finger="2" fret="2" string="G"/>
+        <finger finger="1" fret="1" string="B"/>
+        <finger finger="1" fret="1" string="e"/>
+    </chord>
+
+    <chord name="G" frets="3,2,0,0,3,3">
         <finger finger="1" fret="2" string="A"/>
         <finger finger="2" fret="3" string="E"/>
-        <finger finger="3" fret="3" string="e"/>
+        <finger finger="3" fret="3" string="B"/>
+        <finger finger="4" fret="3" string="e"/>
     </chord>
 </chords>
